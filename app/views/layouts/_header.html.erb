@@ -1,0 +1,17 @@
+<header class="page-header wrapper">
+  <h1><%= link_to "WEB CAFE", '/', {class: "page-logo"} %></h1>
+    <nav>
+        <ul class="main-nav">
+            <li><%= link_to "News", '/static_pages/news' %></li>
+            <li><%= link_to "Menu", '/menus' %></li>
+            <li><%= link_to "Contact", '/static_pages/contact' %></li>
+            <% if user_signed_in? %>
+
+            <% else %>
+              <li><%= link_to "Sign in", new_user_registration_path %></li>
+              <li><%= link_to "Sign up", new_user_session_path %></li>
+
+            <% end %>
+        </ul>
+    </nav>
+</header>

@@ -1,0 +1,9 @@
+<%= form_with(model: @menu, local: true) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+  <%= f.label :comment %>
+  <%= f.text_area :comment, class: 'form-control' %><BR>
+  <%= f.label :photo %>
+  <%= f.file_field :image %><BR>
+  <%= f.submit "update", class: "button-create" %>
+<% end %>

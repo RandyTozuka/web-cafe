@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <h1>各メニューの内容確認ページです</h1>
+  <h3>id: <%= @menu.id %></h3>
+  <h3><%= @menu.name %></h3>
+  <h3><%= @menu.comment %></h3>
+  <%= image_tag @menu.image %>
+  <p><%= link_to '編集する', edit_menu_path(@menu)  %></p>
+</div>

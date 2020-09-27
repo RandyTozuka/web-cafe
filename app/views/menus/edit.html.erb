@@ -1,0 +1,7 @@
+<div id="contact" class="big-bg">
+  <div class="wrapper">
+    <h2 class="page-title">Edit the Menu</h2>
+    <%= render 'layouts/menu_form' %></br>
+    <%= link_to 'delete', "/menus/#{@menu.id}", method: :delete, class:"button-destroy" %>
+  </div><!-- /.wrapper -->
+</div><!-- /#contact -->
