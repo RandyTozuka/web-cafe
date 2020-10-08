@@ -271,8 +271,8 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :twitter, ENV['YxaFf6FoL9Plmem1l1jRA8wig'],
-                            ENV['NZL7E6SX9Iu8bP8xoqjlPobw5RV2fhz6ChchHTQeYJGxlyZQmL'],
+  config.omniauth :twitter, 'YxaFf6FoL9Plmem1l1jRA8wig',
+                            'NZL7E6SX9Iu8bP8xoqjlPobw5RV2fhz6ChchHTQeYJGxlyZQmL',
                             scope: 'email',
                             callback_url: 'http://127.0.0.1:3000/users/auth/twitter/callback'
 
