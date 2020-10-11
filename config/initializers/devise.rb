@@ -274,7 +274,7 @@ Devise.setup do |config|
   config.omniauth :twitter, 'YxaFf6FoL9Plmem1l1jRA8wig',
                             'NZL7E6SX9Iu8bP8xoqjlPobw5RV2fhz6ChchHTQeYJGxlyZQmL',
                             scope: 'email',
-                            callback_url: 'http://127.0.0.1:3000/users/auth/twitter/callback'
+                            callback_url: 'http://localhost:3000/users/omniauth_callbacks'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
