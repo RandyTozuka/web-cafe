@@ -1,15 +1,20 @@
 <div id="menu" class="big-bg">
   <div class="menu-content wrapper">
       <h2 class="page-title">Menu</h2>
-      <p>
-          体に優しい自然食を提供する、WEB CAFE。無添加の食材を利用したメニューがfabulousです。
-          おいしいブレンドコーヒーとヘルシーなオーガニックフードで体の内側から癒やされてください。
-      </p>
+      <% if user_signed_in? && current_user.admin? %>
+        <%= link_to 'メニュー管理画面へ', '/', {class: "button"} %>
+      <% else %>
+        <p>
+            体に優しい自然食を提供する、WEB CAFE。無添加の食材を利用したメニューがfabulousです。
+            おいしいブレンドコーヒーとヘルシーなオーガニックフードで体の内側から癒やされてください。
+        </p>
+      <% end %>
+
   </div><!-- /.menu-content -->
 </div><!-- /#menu -->
 
 <div class="wrapper grid">
-  <% @menus.each do |s| %>
+  <% @menus.order(:updated_at).last(6).each do |s| %>
     <div class="item">
         <%= image_tag s.image if s.image.attached? %>
         <p><%= s.name %></p>
