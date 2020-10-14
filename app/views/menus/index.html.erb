@@ -2,7 +2,8 @@
   <div class="menu-content wrapper">
       <h2 class="page-title">Menu</h2>
       <% if user_signed_in? && current_user.admin? %>
-        <%= link_to 'メニュー管理画面へ', '/', {class: "button"} %>
+        <h2 class="page-title-admin">管理画面</h2>
+        <h2 class= "page-title-admin"><%= link_to "新メニュー登録", new_menu_path %></h2>
       <% else %>
         <p>
             体に優しい自然食を提供する、WEB CAFE。無添加の食材を利用したメニューがfabulousです。
@@ -13,6 +14,18 @@
   </div><!-- /.menu-content -->
 </div><!-- /#menu -->
 
+<% if user_signed_in? && current_user.admin? %>
+<div class="wrapper grid">
+  <% @menus.each do |s| %>
+    <div class="item">
+        <%= image_tag s.image if s.image.attached? %>
+        <p><%= s.name %></p>
+        <p><%= s.comment %></p>
+        <%= link_to '編集する', edit_menu_path(s.id) %>
+    </div>
+  <% end %>
+</div><!-- /.grid -->
+<% else %>
 <div class="wrapper grid">
   <% @menus.order(:updated_at).last(6).each do |s| %>
     <div class="item">
@@ -22,3 +35,4 @@
     </div>
   <% end %>
 </div><!-- /.grid -->
+<% end %>
