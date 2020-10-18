@@ -18,8 +18,7 @@ class NewsController < ApplicationController
   end
 
   def update
-    @new = New.find(params[:id])
-    @new.update.params.require(:new).permit(:title, :category, :content, :image)
+    New.find(params[:id]).update(new_params)
     redirect_to '/news'
   end
 
