@@ -3,8 +3,10 @@
   <div class="wrapper">
     <h2 class="page-title">Entry news</h2>
         <%= form_with(model: @new, local: true) do |f| %>
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'form-control' %>
           <%= f.label :category %>
-          <%= f.text_field :name, class: 'form-control' %>
+          <%= f.text_area :category, class: 'form-control' %><BR>
           <%= f.label :content %>
           <%= f.text_area :content, class: 'form-control' %><BR>
           <%= f.label :photo %>

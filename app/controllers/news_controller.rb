@@ -19,7 +19,7 @@ class NewsController < ApplicationController
 
   def update
     @new = New.find(params[:id])
-    @new.update.params.require(:new).permit(:category, :content, :image)
+    @new.update.params.require(:new).permit(:title, :category, :content, :image)
     redirect_to '/news'
   end
 
@@ -30,7 +30,7 @@ class NewsController < ApplicationController
 
   private
     def new_params
-      params.require(:new).permit(:category, :content, :image)
+      params.require(:new).permit(:title, :category, :content, :image)
       #このようにして、imageカラムはテーブルにはないにも関わらずあたかもカラムがあるかのように扱うことで、
       #フォームのfile_fieldで選択された画像をCommentオブジェクトと紐付け。Active Storageの特徴の一つ。
     end
