@@ -1,0 +1,16 @@
+
+<div id="contact" class="big-bg">
+  <div class="wrapper">
+    <h2 class="page-title">Entry news</h2>
+        <%= form_with(model: @new, local: true) do |f| %>
+          <%= f.label :category %>
+          <%= f.text_field :name, class: 'form-control' %>
+          <%= f.label :content %>
+          <%= f.text_area :content, class: 'form-control' %><BR>
+          <%= f.label :photo %>
+          <%= f.file_field :image %><BR>
+          <%= f.submit "Create news", class: "button-create" %>
+        <% end %>
+    </div>
+  </div><!-- /.wrapper -->
+</div><!-- /#contact -->

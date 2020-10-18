@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'static_pages/menu'
   get 'static_pages/contact'
   get 'static_pages/news'
-  # devise_for :users
-  resources :menus
+  resources :menus # devise_for :users
+  resources :news
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

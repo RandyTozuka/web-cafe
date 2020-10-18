@@ -1,9 +1,14 @@
 <div id="news" class="big-bg">
   <div class="wrapper">
-      <h2 class="page-title">News</h2>
+    <h2 class="page-title">News</h2>
   </div><!-- /.wrapper -->
 </div><!-- /#news -->
 
+<% if user_signed_in? && current_user.admin?%>
+<h1>新規作成する</h1>
+<h1>編集する</h1>
+
+<% else %>
 <div class="news-contents wrapper">
   <article>
       <header class="post-info">
@@ -45,3 +50,5 @@
       </p>
   </aside>
 </div><!-- /.news-contents -->
+
+<% end %>
