@@ -1,7 +1,7 @@
 <div id="contact" class="big-bg">
   <div class="wrapper">
     <h2 class="page-title">Entry news</h2>
-        <%= form_with(model: @new, local: true) do |f| %>
+        <%= form_with(model: @new, url: {action: "create"}, local: true) do |f| %>
           <%= f.label :title %>
           <%= f.text_field :title, class: 'form-control' %>
           <%= f.label :category %>
