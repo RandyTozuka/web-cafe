@@ -12,6 +12,7 @@
           <%= f.file_field :image %><BR>
           <%= f.submit "Update news", class: "button-create" %>
         <% end %>
+        <h3><%= link_to '削除する', news_path(@new),　method: :delete %></h3>
     </div>
   </div><!-- /.wrapper -->
 </div><!-- /#contact -->

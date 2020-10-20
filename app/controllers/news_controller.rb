@@ -4,6 +4,10 @@ class NewsController < ApplicationController
     @new = New.new
   end
 
+  def index
+    @news = New.all
+  end
+
   def show
     @new = New.find(params[:id])
   end
@@ -22,9 +26,10 @@ class NewsController < ApplicationController
     redirect_to '/news'
   end
 
-  def delete
+  def destroy
     @new = New.find(params[:id])
     @new.destroy
+    redirect_to '/news'
   end
 
   private
