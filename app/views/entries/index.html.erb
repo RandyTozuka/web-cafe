@@ -1,7 +1,7 @@
 <h3>News Index Page</h3>
-<% @news.each do |n| %>
+<% @entries.each do |n| %>
   <%= n.id %>
-  <%= link_to '編集する', edit_news_path(n.id) %></br>
+  <%= link_to '編集する', edit_entries_path(n.id) %></br>
   <%= n.updated_at %><br>
   <%= n.title %><br>
   <%= n.category %><br>

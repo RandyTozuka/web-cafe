@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.create(entry_params) #strong parameter
-    redirect_to '/news'
+    redirect_to '/entries'
   end
 
   def edit
@@ -22,7 +22,7 @@ class EntriesController < ApplicationController
   end
 
   def update
-    Entry.find(params[:id]).update(new_params)
+    Entry.find(params[:id]).update(entry_params)
     redirect_to '/entries'
   end
 

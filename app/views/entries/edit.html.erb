@@ -1,7 +1,7 @@
 <div id="contact" class="big-bg">
   <div class="wrapper">
     <h2 class="page-title">Edit news</h2>
-        <%= form_with(model: @new, local: true) do |f| %>
+        <%= form_with(model: @entry, local: true) do |f| %>
           <%= f.label :title %>
           <%= f.text_field :title, class: 'form-control' %>
           <%= f.label :category %>
@@ -12,7 +12,7 @@
           <%= f.file_field :image %><BR>
           <%= f.submit "Update news", class: "button-create" %>
         <% end %>
-        <h3><%= link_to '削除する', news_path(@new),　method: :delete %></h3>
+        <h3><%= link_to '削除する', entries_path(@entry),　method: :delete %></h3>
     </div>
   </div><!-- /.wrapper -->
 </div><!-- /#contact -->
