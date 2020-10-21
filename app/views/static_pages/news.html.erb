@@ -5,11 +5,11 @@
 </div><!-- /#news -->
 
 <% if user_signed_in? && current_user.admin?%>
-<h3><%= link_to '新規作成する', '/news/new' %></h3>
-<h3><%= link_to 'News一覧をみる', '/news' %></h3>
+<h3><%= link_to '新規作成する', '/entries/new' %></h3>
+<h3><%= link_to 'News一覧をみる', '/entries' %></h3>
 
 <% else %>
-<div class="news-contents wrapper">
+<div class="new-contents wrapper">
   <article>
       <header class="post-info">
           <h2 class="post-title">店内ギャラリーの絵が新しくなりました</h2>

@@ -1,40 +1,40 @@
-class NewsController < ApplicationController
+class EntriesController < ApplicationController
 
   def new
-    @new = New.new
+    @entry = Entry.new
   end
 
   def index
-    @news = New.all
+    @entries = Entry.all
   end
 
   def show
-    @new = New.find(params[:id])
+    @entry = Entry.find(params[:id])
   end
 
   def create
-    @new = New.create(new_params) #strong parameter
+    @entry = Entry.create(entry_params) #strong parameter
     redirect_to '/news'
   end
 
   def edit
-    @new = New.find(params[:id])
+    @entry = Entry.find(params[:id])
   end
 
   def update
-    New.find(params[:id]).update(new_params)
-    redirect_to '/news'
+    Entry.find(params[:id]).update(new_params)
+    redirect_to '/entries'
   end
 
   def destroy
-    @new = New.find(params[:id])
-    @new.destroy
-    redirect_to '/news'
+    @nentry = Entry.find(params[:id])
+    @entry.destroy
+    redirect_to '/entries'
   end
 
   private
-    def new_params
-      params.require(:new).permit(:title, :category, :content, :image)
+    def entry_params
+      params.require(:entry).permit(:title, :category, :content, :image)
       #このようにして、imageカラムはテーブルにはないにも関わらずあたかもカラムがあるかのように扱うことで、
       #フォームのfile_fieldで選択された画像をCommentオブジェクトと紐付け。Active Storageの特徴の一つ。
     end

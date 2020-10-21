@@ -1,4 +1,4 @@
-class New < ApplicationRecord
+class Entry < ApplicationRecord
 has_one_attached :image
 validates :image,   content_type: { in: %w[image/jpeg image/gif image/png],
                                       message: "画像フォーマットは,jpeg, gif, pngにしてください" },
