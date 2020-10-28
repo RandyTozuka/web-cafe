@@ -1,10 +1,10 @@
 <h3>News Index Page</h3>
 <% @entries.each do |n| %>
   <%= n.id %>
-  <%= link_to '編集する', edit_entries_path(n.id) %></br>
+  <%= link_to '編集する', edit_entry_path(n.id) %></br>
   <%= n.updated_at %><br>
   <%= n.title %><br>
   <%= n.category %><br>
   <%= n.content %><br>
-  <%= image_tag n.image %><br>
+  <%= image_tag n.image if n.image.attached? %><br>
 <% end %>

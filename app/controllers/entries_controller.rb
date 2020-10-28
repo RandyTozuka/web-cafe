@@ -27,7 +27,7 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    @nentry = Entry.find(params[:id])
+    @entry = Entry.find(params[:id])
     @entry.destroy
     redirect_to '/entries'
   end
